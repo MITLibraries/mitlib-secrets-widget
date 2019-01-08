@@ -1,0 +1,13 @@
+{
+    "name": "mitlibraries/mitlib-secrets-widget",
+    "description": "A WordPress plugin that provides an administrative widget to list available secrets",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Matt Bernhardt",
+            "email": "mjbernha@mit.edu"
+        }
+    ],
+    "require": {}
+}
