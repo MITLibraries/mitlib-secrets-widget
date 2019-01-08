@@ -9,6 +9,10 @@
 ?>
 
 <p>The following secrets have been defined for this application / environment:</p>
-<pre>
-<?php print_r( array_keys( $data ) ); ?>
-</pre>
+<ul>
+<?php
+foreach ( array_keys( $data ) as $item ) {
+	echo( '<li>' . esc_html( $item ) . '</li>' );
+}
+?>
+</ul>

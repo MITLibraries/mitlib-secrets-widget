@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include the necessary classes.
-include_once 'class-mitlib-secrets-widget.php';
+require_once 'class-mitlib-secrets-widget.php';
 
 // Call the class' init method as part of dashboard setup.
 add_action( 'wp_dashboard_setup', array( 'mitlib\Mitlib_Secrets_Widget', 'init' ) );
