@@ -45,6 +45,10 @@ engines:
     checks:
       Controversial/CamelCaseClassName:
         enabled: false
+      Controversial/CamelCaseMethodName:
+        enabled: false
+      Controversial/CamelCaseParameterName:
+        enabled: false
       Controversial/CamelCaseVariableName:
         enabled: false
 ratings:

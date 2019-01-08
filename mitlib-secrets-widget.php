@@ -3,7 +3,7 @@
  * Plugin Name: MITlib Secrets Widget
  * Plugin URI: https://github.com/matt-bernhardt/mitlib-secrets-widget
  * Description: A plugin to list the defined secrets (keys, not their values) coming from Pantheon's Terminus Secrets plugin
- * Version: 0.0.1
+ * Version: 0.1.0
  * Author: Matt Bernhardt
  * Author URI: https://github.com/matt-bernhardt
  * License: GPL2
@@ -36,17 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include the necessary classes.
-// require_once 'class-mitlib-secrets.php';
+require_once 'class-mitlib-secrets-widget.php';
 
-// Function that outputs the contents of the dashboard widget
-function secrets_widget_dashboard( $post, $callback_args ) {
-	echo "Hello World, this is my first Dashboard Widget!";
-}
-
-/**
- * Registers base widget.
- */
-function secrets_register_dashboard_widget() {
-	wp_add_dashboard_widget( 'mitlib\MITlib_Secrets', 'MITlib Secrets', 'mitlib\secrets_widget_dashboard');
-}
-add_action( 'wp_dashboard_setup', 'mitlib\secrets_register_dashboard_widget' );
+// Call the class' init method as part of dashboard setup.
+add_action( 'wp_dashboard_setup', array( 'mitlib\Mitlib_Secrets_Widget', 'init' ) );
