@@ -9,3 +9,6 @@
 ?>
 
 <p>The following secrets have been defined for this application / environment:</p>
+<pre>
+<?php print_r( array_keys( $data ) ); ?>
+</pre>

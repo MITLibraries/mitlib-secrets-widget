@@ -36,8 +36,49 @@ class Mitlib_Secrets_Widget {
 	 */
 	public static function widget() {
 
+		// Define the list of required fields that we expect.
+		$required = array(
+			'FOO',
+		);
+
+		// Define the default values.
+		$defaults = array(
+			'FOO' => 'bar',
+		);
+
+		// Load the secrets
+		$data = self::_get_secrets( $required, $defaults );
+
 		// Use the template to render widget output.
 		require_once( 'templates/widget.php' );
 
 	}
+
+	/**
+	 * Load the available secrets
+	 *
+	 * @param array $requiredKeys  List of keys in secrets file that must exist.
+	 * @param array $defaults      The default values to use in case something isn't defined.
+	 * @link https://github.com/pantheon-systems/quicksilver-examples/blob/master/slack_notification/slack_notification.php
+	 */
+	private static function _get_secrets( $requiredKeys, $defaults ) {
+
+		$secretsFile = $_SERVER['HOME'] . '/files/private/secrets.json';
+		if (!file_exists($secretsFile)) {
+			die('<p>No secrets file found. Aborting...</p>' );
+		}
+		$secretsContents = file_get_contents($secretsFile);
+		$secrets = json_decode($secretsContents, 1);
+		if ($secrets == FALSE) {
+			die('Could not parse json in secrets file. Aborting!');
+		}
+		$secrets = array_merge($defaults, $secrets);
+		$missing = array_diff($requiredKeys, array_keys($secrets));
+		if (!empty($missing)) {
+			die('Missing required keys in json secrets file: ' . implode(',', $missing) . '. Aborting!');
+		}
+		return $secrets;
+
+	}
+
 }
