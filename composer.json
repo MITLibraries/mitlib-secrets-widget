@@ -1,5 +1,5 @@
 {
-    "name": "mitlibraries/mitlib-secrets-widget",
+    "name": "matt-bernhardt/mitlib-secrets-widget",
     "description": "A WordPress plugin that provides an administrative widget to list available secrets",
     "type": "wordpress-plugin",
     "license": "GPLv2",
