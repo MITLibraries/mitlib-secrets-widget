@@ -3,7 +3,7 @@
  * Plugin Name: MITlib Secrets Widget
  * Plugin URI: https://github.com/matt-bernhardt/mitlib-secrets-widget
  * Description: A plugin to list the defined secrets (keys, not their values) coming from Pantheon's Terminus Secrets plugin
- * Version: 0.1.1
+ * Version: 0.1.2
  * Author: Matt Bernhardt
  * Author URI: https://github.com/matt-bernhardt
  * License: GPL2
