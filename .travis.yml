@@ -2,7 +2,7 @@
 # @link https://travis-ci.org/
 
 # For use with the MIT Libraries' news integration plugin.
-# @link https://github.com/matt-bernhardt/wp-news-integration
+# @link https://github.com/mitlibraries/mitlib-secrets-widget
 
 # Declare what Travis environment should be used. Specifically, we need the
 # 'precise' environment rather than 'trusty' to get PHP 5.3.
